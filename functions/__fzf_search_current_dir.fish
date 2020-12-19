@@ -10,7 +10,7 @@ function __fzf_search_current_dir --description "Search the current directory us
     if test $status -eq 0
         for path in $file_paths_selected
             set escaped_path (string escape "$path")
-            commandline --insert "$escaped_path "
+			commandline "$EDITOR $escaped_path"; and commandline -f execute
         end
     end
 
